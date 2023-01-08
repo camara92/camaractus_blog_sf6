@@ -1,0 +1,733 @@
+PS C:\Users\daoud\camaractus> symfony console make:entity Article
+
+ created: src/Entity/Article.php
+ created: src/Repository/ArticleRepository.php
+ 
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > title
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > slug
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > content
+
+ Field type (enter ? to see all types) [string]:
+ > text
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > featuredText
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > createdAt
+
+ Field type (enter ? to see all types) [datetime_immutable]:
+ > datetime
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > updatedAt
+
+ Field type (enter ? to see all types) [datetime_immutable]:
+ > datetime
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+ 
+  Success! 
+ 
+
+ Next: When you're ready, create a migration with php bin/console make:migration
+
+PS C:\Users\daoud\camaractus> symfony console make:entity Category
+
+ created: src/Entity/Category.php
+ created: src/Repository/CategoryRepository.php
+ 
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > name
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Category.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > slug
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Category.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > color
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ > 10
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Category.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > articles
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Article
+
+What type of relationship is this?
+ ------------ ------------------------------------------------------------------------ 
+  Type         Description
+ ------------ ------------------------------------------------------------------------
+  ManyToOne    Each Category relates to (has) one Article.
+               Each Article can relate to (can have) many Category objects.
+
+  OneToMany    Each Category can relate to (can have) many Article objects.
+               Each Article relates to (has) one Category.
+
+  ManyToMany   Each Category can relate to (can have) many Article objects.
+               Each Article can also relate to (can also have) many Category objects.
+
+  OneToOne     Each Category relates to (has) exactly one Article.
+               Each Article also relates to (has) exactly one Category.
+ ------------ ------------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToMany
+
+ Do you want to add a new property to Article so that you can access/update Category objects from it - e.g. $article->getCategories()? (yes/no) [yes]:
+ >
+
+ A new property will also be added to the Article class so that you can access the related Category objects from it.
+
+ New field name inside Article [categories]:
+ >
+
+ updated: src/Entity/Category.php
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > 
+
+
+ 
+  Success! 
+ 
+
+ Next: When you're ready, create a migration with php bin/console make:migration
+
+PS C:\Users\daoud\camaractus> symfony console make:entity Comment 
+
+ created: src/Entity/Comment.php
+ created: src/Repository/CommentRepository.php
+ 
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > content
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Comment.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > createdAt
+
+ Field type (enter ? to see all types) [datetime_immutable]:
+ > datetime
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Comment.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > article
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Article
+
+What type of relationship is this?
+ ------------ -----------------------------------------------------------------------
+  Type         Description
+ ------------ -----------------------------------------------------------------------
+  ManyToOne    Each Comment relates to (has) one Article.
+               Each Article can relate to (can have) many Comment objects.
+
+  OneToMany    Each Comment can relate to (can have) many Article objects.
+               Each Article relates to (has) one Comment.
+
+  ManyToMany   Each Comment can relate to (can have) many Article objects.
+               Each Article can also relate to (can also have) many Comment objects.
+
+  OneToOne     Each Comment relates to (has) exactly one Article.
+               Each Article also relates to (has) exactly one Comment.
+ ------------ -----------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToOne
+
+ Is the Comment.article property allowed to be null (nullable)? (yes/no) [yes]:
+ > no
+
+ Do you want to add a new property to Article so that you can access/update Comment objects from it - e.g. $article->getComments()? (yes/no) [yes]:
+ >
+
+ A new property will also be added to the Article class so that you can access the related Comment objects from it.
+
+ New field name inside Article [comments]:
+ >
+
+ Do you want to activate orphanRemoval on your relationship?
+ A Comment is "orphaned" when it is removed from its related Article.
+ e.g. $article->removeComment($comment)
+
+ NOTE: If a Comment may *change* from one Article to another, answer "no".
+
+ Do you want to automatically delete orphaned App\Entity\Comment objects (orphanRemoval)? (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Comment.php
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > 
+
+
+ 
+  Success! 
+ 
+
+ Next: When you're ready, create a migration with php bin/console make:migration
+
+PS C:\Users\daoud\camaractus> symfony console make:entity Media  
+
+ created: src/Entity/Media.php
+ created: src/Repository/MediaRepository.php
+ 
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > name
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Media.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > alt
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Media.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > filename
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Media.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+ 
+  Success! 
+ 
+
+ Next: When you're ready, create a migration with php bin/console make:migration
+
+PS C:\Users\daoud\camaractus> symfony console make:entity Article 
+
+ Your entity already exists! So let's add some new fields!
+
+ New property name (press <return> to stop adding fields):
+ > featuredImage
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Media
+
+What type of relationship is this?
+ ------------ --------------------------------------------------------------------- 
+  Type         Description
+ ------------ ---------------------------------------------------------------------
+  ManyToOne    Each Article relates to (has) one Media.
+               Each Media can relate to (can have) many Article objects.
+
+  OneToMany    Each Article can relate to (can have) many Media objects.
+               Each Media relates to (has) one Article.
+
+  ManyToMany   Each Article can relate to (can have) many Media objects.
+               Each Media can also relate to (can also have) many Article objects.
+
+  OneToOne     Each Article relates to (has) exactly one Media.
+               Each Media also relates to (has) exactly one Article.
+ ------------ ---------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToOne
+
+ Is the Article.featuredImage property allowed to be null (nullable)? (yes/no) [yes]:
+ >
+
+ Do you want to add a new property to Media so that you can access/update Article objects from it - e.g. $media->getArticles()? (yes/no) [yes]:
+ > no
+
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+ 
+  Success! 
+ 
+
+ Next: When you're ready, create a migration with php bin/console make:migration
+
+PS C:\Users\daoud\camaractus> symfony console make:entity Option 
+
+ created: src/Entity/Option.php
+ created: src/Repository/OptionRepository.php
+ 
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > label
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Option.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > name
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Option.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > value
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Option.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > type
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Option.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+ 
+  Success! 
+ 
+
+ Next: When you're ready, create a migration with php bin/console make:migration
+
+PS C:\Users\daoud\camaractus> symfony console make:entity Page  
+
+ created: src/Entity/Page.php
+ created: src/Repository/PageRepository.php
+ 
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > title
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Page.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > slug
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Page.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > content
+
+ Field type (enter ? to see all types) [string]:
+ > text
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Page.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > ccreatedAt
+
+ Field type (enter ? to see all types) [datetime_immutable]:
+ > datetime
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ created: src/Entity/Menu.php
+ created: src/Repository/MenuRepository.php
+
+ Entity generated! Now let's add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > menuOrder
+
+ Field type (enter ? to see all types) [string]:
+ > integer
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Menu.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > subMenus
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Menu
+
+What type of relationship is this?
+ ------------ ----------------------------------------------------------------- 
+  Type         Description
+ ------------ ----------------------------------------------------------------- 
+  ManyToOne    Each Menu relates to (has) one Menu.
+               Each Menu can relate to (can have) many Menu objects.
+
+  OneToMany    Each Menu can relate to (can have) many Menu objects.
+               Each Menu relates to (has) one Menu.
+
+  ManyToMany   Each Menu can relate to (can have) many Menu objects.
+               Each Menu can also relate to (can also have) many Menu objects.
+
+  OneToOne     Each Menu relates to (has) exactly one Menu.
+               Each Menu also relates to (has) exactly one Menu.
+ ------------ -----------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToMany
+
+ Do you want to add a new property to Menu so that you can access/update Menu objects from it - e.g. $menu->getMenus()? (yes/no) [yes]:
+ >
+
+ A new property will also be added to the Menu class so that you can access the related Menu objects from it.
+
+ New field name inside Menu [menus]:
+ > subMenus
+
+ Not generating Menu::getSubMenus(): method already exists
+ Not generating Menu::addSubMenu(): method already exists
+ Not generating Menu::removeSubMenu(): method already exists
+ updated: src/Entity/Menu.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > isVisible
+
+ Field type (enter ? to see all types) [boolean]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Menu.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > article
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Article
+
+What type of relationship is this?
+ ------------ --------------------------------------------------------------------
+  Type         Description
+ ------------ --------------------------------------------------------------------
+  ManyToOne    Each Menu relates to (has) one Article.
+               Each Article can relate to (can have) many Menu objects.
+
+  OneToMany    Each Menu can relate to (can have) many Article objects.
+               Each Article relates to (has) one Menu.
+
+  ManyToMany   Each Menu can relate to (can have) many Article objects.
+               Each Article can also relate to (can also have) many Menu objects.
+
+  OneToOne     Each Menu relates to (has) exactly one Article.
+               Each Article also relates to (has) exactly one Menu.
+ ------------ --------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToOne
+
+ Is the Menu.article property allowed to be null (nullable)? (yes/no) [yes]:
+ >
+
+ Do you want to add a new property to Article so that you can access/update Menu objects from it - e.g. $article->getMenus()? (yes/no) [yes]:
+ > no
+
+ updated: src/Entity/Menu.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > category
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Category
+
+What type of relationship is this?
+ ------------ ---------------------------------------------------------------------
+  Type         Description
+ ------------ ---------------------------------------------------------------------
+  ManyToOne    Each Menu relates to (has) one Category.
+               Each Category can relate to (can have) many Menu objects.
+
+  OneToMany    Each Menu can relate to (can have) many Category objects.
+               Each Category relates to (has) one Menu.
+
+  ManyToMany   Each Menu can relate to (can have) many Category objects.
+               Each Category can also relate to (can also have) many Menu objects.
+
+  OneToOne     Each Menu relates to (has) exactly one Category.
+               Each Category also relates to (has) exactly one Menu.
+ ------------ ---------------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToOne
+
+ Is the Menu.category property allowed to be null (nullable)? (yes/no) [yes]:
+ >
+
+ Do you want to add a new property to Category so that you can access/update Menu objects from it - e.g. $category->getMenus()? (yes/no) [yes]:
+ > no
+
+ updated: src/Entity/Menu.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > page
+
+ Field type (enter ? to see all types) [string]:
+ > relation
+
+ What class should this entity be related to?:
+ > Page
+
+What type of relationship is this?
+ ------------ -----------------------------------------------------------------
+  Type         Description
+ ------------ -----------------------------------------------------------------
+  ManyToOne    Each Menu relates to (has) one Page.
+               Each Page can relate to (can have) many Menu objects.
+
+  OneToMany    Each Menu can relate to (can have) many Page objects.
+               Each Page relates to (has) one Menu.
+
+  ManyToMany   Each Menu can relate to (can have) many Page objects.
+               Each Page can also relate to (can also have) many Menu objects.
+
+  OneToOne     Each Menu relates to (has) exactly one Page.
+               Each Page also relates to (has) exactly one Menu.
+ ------------ -----------------------------------------------------------------
+
+ Relation type? [ManyToOne, OneToMany, ManyToMany, OneToOne]:
+ > ManyToOne
+
+ Is the Menu.page property allowed to be null (nullable)? (yes/no) [yes]:
+ >
+
+ Do you want to add a new property to Page so that you can access/update Menu objects from it - e.g. $page->getMenus()? (yes/no) [yes]:
+ > no
+
+ updated: src/Entity/Menu.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > link
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+ Field length [255]:
+ >
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Menu.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+ 
+  Success! 
+ 
+
+ Next: When you're ready, create a migration with php bin/console make:migration
